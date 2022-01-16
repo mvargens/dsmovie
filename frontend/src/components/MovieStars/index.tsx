@@ -56,7 +56,6 @@ function MovieStars({ score } : Props ){
             <Star fill = {fills[2]} />
             <Star fill = {fills[3]} />
             <Star fill = {fills[4]} />
-            <StarEmpty />
         </div>
     );
 }
