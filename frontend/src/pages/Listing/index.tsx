@@ -9,8 +9,8 @@ function Listing(){
 
     //pageNumber é setado por setPageNumber
     const [pageNumber, setPageNumber] = useState(0); //sempre iniciar useState com valor inicial
-    //generic para indicar o tipo
-    const [page, setPage] = useState<MoviePage>({
+    
+    const [page, setPage] = useState<MoviePage>({ //generic para indicar o tipo
         content: [],
         last: true,
         totalPages: 0,
@@ -28,7 +28,12 @@ function Listing(){
         .then(response => {
             const data = response.data as MoviePage;
             setPage(data)
+            console.log(data)
         });
+
+
+
+
     },[pageNumber]);
 
     const handlePageChange = (newPageNumber : number) => {

@@ -1,4 +1,5 @@
 import axios, {AxiosRequestConfig} from "axios";
+import MovieScore from "components/MovieScore";
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Movie } from "types/movie";
@@ -57,6 +58,7 @@ function FormCard( { movieId } : Props) {
             <img className="dsmovie-movie-card-image" src={movie?.image} alt={movie?.title} />
             <div className="dsmovie-card-bottom-container">
                 <h3>{movie?.title}</h3>
+                <MovieScore count={movie ? movie.count : 0} score={movie ? movie.score: 0}/>
                 <form className="dsmovie-form" onSubmit={handleSubmit}>
                     <div className="form-group dsmovie-form-group">
                         <label htmlFor="email">Informe seu email</label>
